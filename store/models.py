@@ -35,6 +35,9 @@ class Customer(models.Model):
     birth_date = models.DateField(null=True)
     membership = models.CharField(max_length=1, choices=MEMBERSHIP_CHOICE, default = MEMBERSHIP_BRONZE)
 
+    def __str__(self) -> str:
+        return f"{self.first_name} {self.last_name}"
+
 class Order(models.Model):
     STATUS_PENDING = 'P'
     STATUS_COMPLETE = 'C'
